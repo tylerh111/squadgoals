@@ -1,0 +1,19 @@
+services:
+    minecraft:
+        image: squadgoals/minecraft-java:${IMAGE_TAG:-latest}
+        build: 
+            context: ./docker
+        ports:
+            - "25565:25565"
+        volumes:
+            - type: volume
+              source: server-data
+              target: /srv
+            
+volumes:
+    server-data:
+        name: ${MINECRAFT_SERVER_NAME}
+        labels:
+            org.squadgoals.description: "Minecraft Server"
+        
+        

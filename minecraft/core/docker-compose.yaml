@@ -1,0 +1,8 @@
+services:
+    minecraft:
+        image: squadgoals/minecraft-core:${IMAGE_TAG:-latest}
+        build: ./docker
+        ports:
+            - "25565:25565"
+        
+        
