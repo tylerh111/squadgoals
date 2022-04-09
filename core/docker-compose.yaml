@@ -1,6 +1,0 @@
-services:
-    app:
-        image: squadgoals/core:${IMAGE_TAG:-latest}
-        build: ./docker
-        
-        

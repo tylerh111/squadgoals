@@ -1,21 +1,25 @@
 # Squad Goals
 
-This repository contains the docker build files for my minecraft server. The goal of these images is to have a basic server ready to start with a simple start server script. Users will be able to spin up a docker container (with the necessary ports open) with full access to the container's filesystem. This is done on purpose for the sake of accessing the config files directly.
+This repository contains dockerfiles for creating docker wrappers for servers.
+The goal of these images is to have the necessary tools installed to run servers, such as minecraft servers.
+Server files are stored on the host filesystem, but are access via the docker container through volume binding.
 
 ## Getting started
 
 Install docker-ce for your OS/Distro.
 
-Run the helper script to build docker images
-```
-$ ./scripts/build_docker_image.sh <directory contain docker file>
-```
+Refer to the README.md in each instructions on how to build and run the docker images.
 
 ## Docker Images
 
-Run the helper script to build the docker images. The base images, `squadgoals/minecraft/base` is required for all images. It installs all necessary packages and sets configuration files for the root.
-
-The image uses tmux to run the server. This allows users to attach to the server's session after detach/stopping the container. Use `C-b d`to detach from the tmux session. Enter the command `tmux attach -t main` to reattach to the tmux session running the server.
-
+Docker containers startup in a tmux server.
+This allows users to attach to the server's session after detach/stopping the container.
+Use `C-b d` to detach from the tmux session.
+Use `tmux attach -t main` to reattach to the tmux session running the server.
 Refer to the end of `docker/base/.bashrc` for more information.
+
+Users may want to detach from the container after starting the server.
+Use `C-p C-q` to detach from the container
+Use `docker attach <container>`.
+The container name varies, so use `docker ps` to show the running containers. 
 
