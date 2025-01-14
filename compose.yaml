@@ -1,0 +1,5 @@
+
+include:
+  - services/compose.minecraft-1.21.4.yaml
+  - services/compose.minecraft-ftb-revelation-3.7.0.yaml
+  - services/compose.minecraft-ftb-evolution-1.7.0.yaml

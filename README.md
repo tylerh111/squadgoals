@@ -1,25 +1,23 @@
 # Squad Goals
 
-This repository contains dockerfiles for creating docker wrappers for servers.
-The goal of these images is to have the necessary tools installed to run servers, such as minecraft servers.
-Server files are stored on the host filesystem, but are access via the docker container through volume binding.
+Squadgoals is a collection of containerized game servers.
+All container images have pre-installed tools for managing game servers, files, etc.
 
-## Getting started
+### Minecraft
 
-Install docker-ce for your OS/Distro.
+Minecraft servers use [itzg/minecraft-server](https://hub.docker.com/r/itzg/minecraft-server) images.
+See [Minecraft Server on Docker (Java Edition)](https://docker-minecraft-server.readthedocs.io) documentation for more information for working with the server.
 
-Refer to the README.md in each instructions on how to build and run the docker images.
+Useful commands are listed below.
 
-## Docker Images
+```bash
+docker compose up <service>
+```
 
-Docker containers startup in a tmux server.
-This allows users to attach to the server's session after detach/stopping the container.
-Use `C-b d` to detach from the tmux session.
-Use `tmux attach -t main` to reattach to the tmux session running the server.
-Refer to the end of `docker/base/.bashrc` for more information.
+Available services are listed below.
 
-Users may want to detach from the container after starting the server.
-Use `C-p C-q` to detach from the container
-Use `docker attach <container>`.
-The container name varies, so use `docker ps` to show the running containers. 
-
+| Service                    | Name                 | Version  | Minecraft |
+|----------------------------|----------------------|----------|-----------|
+| `minecraft-1.21.4`         | Minecraft            | 1.21.4   | 1.21.4    |
+| `minecraft-ftb-evolution`  | FTB Evolution        | 1.7.0    | 1.21.1    |
+| `minecraft-ftb-revelation` | FTB Revelation       | 3.7.0    | 1.12.2    |

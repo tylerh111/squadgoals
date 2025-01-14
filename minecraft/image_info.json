@@ -1,7 +1,0 @@
-{
-    "name": "squadgoals/minecraft",
-    "tag": "latest",
-    "requirements": [
-        "squadgoals/core"
-    ]
-}

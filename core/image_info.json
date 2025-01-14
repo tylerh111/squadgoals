@@ -1,7 +1,0 @@
-{
-    "name": "squadgoals/core",
-    "tag": "latest",
-    "requirements": [
-        "ubuntu:focal"
-    ]
-}
