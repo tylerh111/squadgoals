@@ -5,7 +5,9 @@
 
 .todo
 
-.env.override
+.env
+.env.*
+!.env.template
 
 site/
 docs/changes.md
