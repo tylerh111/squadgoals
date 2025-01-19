@@ -1,0 +1,19 @@
+
+services:
+  minecraft-cobblemon-1.6.0:
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    environment:
+      EULA: "TRUE"
+      MEMORY: "4G"
+      TYPE: "AUTO_CURSEFORGE"
+      CF_API_KEY: "${SQUADGOALS_CURSEFORGE_API_KEY}"
+      CF_SLUG: cobblemon-fabric
+      CF_FILE_ID: 6035005
+    ports:
+      - ${SQUADGOALS_MINECRAFT_COBBLEMON_1_6_0_PORT}:25565
+      - ${SQUADGOALS_MINECRAFT_COBBLEMON_1_6_0_PORT_RCON}:25575
+    volumes:
+      - "${SQUADGOALS_SERVERS_MINECRAFT_DATAS}/${SQUADGOALS_MINECRAFT_COBBLEMON_1_6_0_DATA}:/data"
+      - "${SQUADGOALS_SERVERS_MINECRAFT_WORLDS}/${SQUADGOALS_MINECRAFT_COBBLEMON_1_6_0_WORLD}:/data/world"
