@@ -1,5 +1,6 @@
 
 include:
+  - services/compose.minecraft-1.21.1.yaml
   - services/compose.minecraft-1.21.4.yaml
   - services/compose.minecraft-cobblemon-1.6.0.yaml
   - services/compose.minecraft-ftb-revelation-3.7.0.yaml
