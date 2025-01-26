@@ -5,3 +5,4 @@ include:
   - services/compose.minecraft-cobblemon-1.6.0.yaml
   - services/compose.minecraft-ftb-revelation-3.7.0.yaml
   - services/compose.minecraft-ftb-evolution-1.7.0.yaml
+  - services/compose.ship-of-harkinian-8.0.3-anchor.yaml

@@ -1,0 +1,18 @@
+
+services:
+  ship-of-harkinian-8.0.3-anchor:
+    image: ghcr.io/garrettjoecox/anchor:latest
+    tty: true
+    stdin_open: true
+    command:
+      - "run"
+      - "--allow-env"
+      - "--allow-read"
+      - "--allow-write"
+      - "--allow-net"
+      - "mod.ts"
+    ports:
+      - ${SQUADGOALS_SHIP_OF_HARKINIAN_8_0_3_ANCHOR_PORT}:43385
+    volumes:
+      # note, must create file `${SQUADGOALS_SERVERS_SHIP_OF_HARKINIAN}/logs/stats.json`
+      - "${SQUADGOALS_SERVERS_SHIP_OF_HARKINIAN}/logs:/logs"
